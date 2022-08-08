@@ -43,7 +43,7 @@ app.get('*', (req, res) => {
     res.redirect('/');
 });
 
-const port = process.env.PORT | 8000;
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`Now listening on port ${port}!`);
 });

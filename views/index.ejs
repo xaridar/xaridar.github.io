@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<div class="flex items-center justify-center w-full h-full flex-col gap-2 text-center max-w-3/4 m-auto">
+    <h1 class="text-6xl text-textPrimary dark:text-textPrimaryDark transition-colors" data-splitting>Elliot Topper</h1>
+    <h3 class="text-3xl text-textPrimary dark:text-textPrimaryDark transition-colors">Computer Science Major at The College of New Jersey</h3>
+    <br>
+    <a href='/projects' class="btn transition-color">
+        Explore Projects
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
+    </a>
+</div>
+<script>
+    $(document).ready(() => {
+        Splitting();
+    });
+</script>
+<%- include('partials/footer') %>

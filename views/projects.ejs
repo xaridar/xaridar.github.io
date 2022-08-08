@@ -1,0 +1,226 @@
+<%- include('partials/header') %>
+<% 
+    const projects = [
+        {
+            name: 'RAT',
+            description: `RAT is a simple-to-use HTML template language, specifically built for serving simple pages with state with Express.JS.
+            
+            It was built using Typescript in Node.JS and published as a public NPM package. RAT supports features such as variable interpolation, common HTML tags and structures, and custom CSS support.`,
+            skills: ['Typescript', 'Node.JS'],
+            image: 'images/RAT_screenshot.jpg',
+            imageAlt: 'Screenshot of the homepage of RAT on npmjs.com, showcasing the project\'s deployment and README.',
+            repository: 'https://www.github.com/xaridar/RAT',
+            productLink: 'https://www.npmjs.com/package/@xaridar/rat',
+        },
+        {
+            name: 'LScript',
+            description: `LScript is a built-from-scratch custom language interpreter built using Java. It is built to be relatively easy to code in and readable, but has many features that make it great for quick scripts.
+            
+            LScript supports many common language functions such as variables, loops, conditionals, file importing, file management, and more. Full binaries for the interpreter are available for both WIndows and Unix operating systems, along with extensive documentation.`,
+            skills: ['Java'],
+            image: 'images/LScript_logo.png',
+            imageAlt: "LScript logo - black lettering 'Ls' on an orange background. Credit https://www.github.com/wdylanbibb.",
+            repository: 'https://www.github.com/xaridar/LScript',
+        },
+        {
+            name: 'WordAround',
+            description: `Built shortly after the immense success of Wordle, WordAround is my take on a similarly-designed word game.
+            Instead of guessing a 5-letter long word, a player has several tries to guess a 6- or 7-letter long word with an undefined starting point, displayed on a circle.
+            Words are randomly generated, and the goal is to guess as many words in a row as possible.
+            
+            WordAround was built using pure HTML5, CSS3, and JavaScript, with a very minimal Express.JS backend.`,
+            skills: ['HTML5', 'CSS3', 'JavaScript'],
+            image: 'images/WordAround_logo.png',
+            imageAlt: 'WordAround logo - stylized light blue lettering "WA" on a dark blue background.',
+            repository: 'https://www.github.com/xaridar/WordAround',
+            productLink: 'https://wordaround.herokuapp.com',
+        },
+        {
+            name: 'Portfolio',
+            description: `This site, which was built to act as a personal portfolio for projects, also gave me an avenue to try new languages and frameworks.
+            It was built using TailwindCSS and EJS for the majority of the frontend, neither of which technologies I had ever used before.
+            These were joined in frontend by jQuery, which I had only used once before.
+            The backend, however, was built using Express.JS, a framework I have become very familiar with. This bit of familiarity helped me to focus on the new parts of the site.`,
+            skills: ['Node.JS', 'jQuery', 'TailwindCSS', 'EJS'],
+            image: '',
+            imageAlt: '',
+            repository: '',
+        },
+        {
+            name: 'Dungeon of Curses',
+            description: `Dungeon of Curses is a small commandline roguelike game that was submitted to and won HackTCNJ2022, the annual 24-hour hackathon put on by The College of New Jersey.
+            
+            I built Dungeon of Curses within the 24 hours of the hackathon along with <a href="https://www.github.com/wdylanbibb" target="_blank" class="text-blue-500">Dylan Bibb</a>.
+            It is a Python game made using the Python port of the classic I/O library ncurses. All content in the game is procedurally generated, including maps, enemies, and items.
+            I primarily worked on data retrieval using multiple public APIs for this generation, creating background music, and developing the backend leaderboard server using Node.JS, Heroku, and PostGreSQL.`,
+            skills: ['Python', 'REST APIs', 'ncurses', 'Node.JS', 'Heroku', 'PostGreSQL'],
+            image: 'images/DOC_screenshot.jpg',
+            imageAlt: "Screenshot of the main menu from Dungeon of Curses; depicts a small building under flaming lettering reading 'Dungeon of Curses'.",
+            repository: 'https://www.github.com/wdylanbibb/HackTCNJ2022',
+        },
+        {
+            name: 'Bullseye',
+            description: `Bullseye is an Android app that I worked on along with <a class="text-blue-500" href="https://github.com/wdylanbibb" target="_blank">Dylan Bibb</a> and <a class="text-blue-500" href="https://github.com/aakashsell" target="_blank">Aakash Sell</a> as a submission for the 2021 Congressional App Challenge.
+            
+            While the app did not place in the competition, I gained much experience from the development process.
+            
+            Bullseye contains a series of games meant to benefit the development of children with ADHD and/or ADD by stimulating memory, focus, and critical thinking, but is useful for all children.
+            The app also tracks every user's stats in the app and lets an admin account view and export these stats to track individual metrics.
+
+            This was the first full Android app I worked on, as well as my first major collaborative project, and through it I learned quite a bit about SQL, MVC architecture, and development in a team.
+            I was the backend lead of the project, and was responsible for one of the games, database management, and background music, as well as general app coding and design.`,
+            skills: ['Android', 'Java', 'XML', 'SQLite'],
+            image: 'images/Bullseye_logo.png',
+            imageAlt: 'Bullseye logo - white and red clip art target on a brown background.',
+            repository: 'https://www.github.com/xaridar/bullseye_android',
+        },
+        {
+            name: 'Notable',
+            description: `Notable is a social Android app that I developed within a few weeks to refamiliarize myself with Android development.
+            The premise of the app is a kind of social media without followers, comments, or the like - instead, all content delivery isbased on physical location, using Firebase's GeoHashing API.
+            
+            While it is unfortunately quite buggy, I learned a lot while creating it.
+            I learned much about how to use Firebase's cloud functions, including an entirely remote aunthentication workflow and data and file storage through Firebase.`,
+            skills: ['Android', 'Java', 'XML', 'Firebase'],
+            image: 'images/Notable_logo.png',
+            imageAlt: "Notable logo - red lettering 'N' on a white background.",
+            repository: 'https://www.github.com/xaridar/Notable',
+        },
+        {
+            name: 'Jason',
+            description: `Jason is a basic voice assistant that I built in Python for Gauntic, a proposed collaborative project by a group of friends.
+            
+            Jason has many different functions built into it for relatively easy hands-free use of simple systems.
+            It utilizes many public Web APIs for information retrieval, from URL shortening to definitions and news.
+            Additionally, Jason has control over media and other OS-dependent systems such as camera and notifications.
+            Finally, Jason runs using a configuration file, which can contain aliases for websites and applications to be opened automatically.
+            
+            All functions are described in the GitHub repository's README, as well as a list of all external resources used.`,
+            skills: ['Python', 'Rest APIs', 'pyttsx3'],
+            image: '',
+            imageAlt: '',
+            repository: 'https://www.github.com/gauntic/Jason',
+        },
+    ]
+%>
+<div class="flex items-center justify-center h-full w-full">
+    <div id="controls-carousel" class="relative w-11/12 h-[91.67%] md:h-4/5 pb-12">
+        <div class="relative overflow-hidden rounded-lg h-full">
+            <% for (const project of projects) { %>
+            <div class="hidden flex-col flex sm:flex-row bg-transparent transition transition-color px-[10%] ease-in-out h-full" data-carousel-item>
+                <div class="flex-3/5 mb-4 sm:mb-0 sm:mr-10 overflow-y-auto h-full scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full px-4 scrollbar-thumb-primary dark:scrollbar-thumb-primaryDark transition transition-color">
+                    <h2 class="text-center text-textPrimary dark:text-textPrimaryDark md:text-6xl text-4xl transition-colors"><%= project.name %></h2>
+                    <div class="h-96 my-2 sm:my-8 max-h-[30%]">
+                        <img src="<%= project.image %>" class="max-h-full aspect-auto text-center m-auto" alt="<%= project.imageAlt %>">
+                    </div>
+
+                    <% project.description.replace(/(?:\r?\n\s*){2}/g, '\n<br>\n').split('\n').forEach((line) => { %>
+                    <p class="text-start m-auto text-textSecondary dark:text-textSecondaryDark text-md mb-4 transition-colors">
+                        <%- line %>
+                    </p>
+                    <% }); %>
+                </div>
+                <div class="sm:flex-1 flex items-center justify-center flex-col">
+                    <a href='<%= project.repository %>' target="_blank" class="my-2 sm:my-4 justify-center w-full text-center btn transition-color">Repository</a>
+                    <% if(project.productLink) { %>
+                    <a href='<%= project.productLink %>' target="_blank" class="my-2 sm:my-4 justify-center w-full text-center btn transition-color">Check It Out!</a>
+                    <% } %>
+                    <div class="w-full my-2 sm:my-8">
+                        <% project.skills.forEach((s) => { %>
+                        <div class="py-1 px-2 inline float-left dark:bg-primaryDark bg-primary dark:text-textPrimary text-textPrimaryDark rounded-xl m-1 transition-colors"><%= s %></div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+            <% for (let i = 0; i < projects.length; i++) { %>
+            <button type="button" class="w-4 h-4 sm:w-3 sm:h-3 rounded-full bg-header dark:bg-headerDark transition-colors" aria-current="<%= i === 0 ? 'true' : 'false' %>" aria-label="Slide <%= i + 1 %>" data-carousel-slide-to="<%= i %>"></button>
+            <% } %>
+        </div>
+        <button type="button" class="absolute top-1/2 left-0 z-30 -translate-x-[4.167vw] sm:translate-x-0 -translate-y-1/2 flex items-center justify-center p-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full text-textSecondary dark:text-textSecondaryDark hover:text-textPrimary hover:dark:text-textPrimaryDark bg-transparent/10 transition-colors group-hover:bg-transparent/30 group-focus:ring-4 group-focus:ring-transparent/30 group-focus:outline-none">
+                <svg class="w-6 h-6 text-inherit" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                <span class="hidden">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-1/2 right-0 z-30 translate-x-[4.167vw] sm:translate-x-0 -translate-y-1/2 flex items-center justify-center p-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full text-textSecondary dark:text-textSecondaryDark hover:text-textPrimary hover:dark:text-textPrimaryDark bg-transparent/10 transition-colors group-hover:bg-transparent/30 group-focus:ring-4 group-focus:ring-transparent/30 group-focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="hidden">Next</span>
+            </span>
+        </button>
+    </div>
+</div>
+<script>
+    $(document).ready(() => {
+        const c = $('#controls-carousel');
+        const items = [...$('[data-carousel-item]')].map((item, i) => {
+            return {
+                position: i,
+                el: item
+            }
+        });
+        // activeClasses cannot be empty
+        const options = {
+            activeItemPosition: 1,
+            indicators: {
+                activeClasses: 'active',
+                inactiveClasses: 'bg-opacity-40 dark:bg-opacity-40 hover:bg-opacity-60 dark:hover:bg-opacity-60',
+                items: [...$('[data-carousel-slide-to]')].map((item) => {
+                    return {
+                        position: +item.dataset['carousel-slide-to'],
+                        el: item
+                    }
+                }),
+            }
+        };
+        const carousel = new Carousel(items, options);
+        $('[data-carousel-next]').click(() => carousel.next());
+        $('[data-carousel-prev]').click(() => carousel.prev());
+        $(document).keydown((e) => {
+            // Left arrow
+            if (e.keyCode === 37) {
+                carousel.prev();
+            }
+            // Right arrow
+            if (e.keyCode === 39) {
+                carousel.next();
+            }
+        });
+        let touchstartX = 0;
+        let touchendX = 0;
+        let touchstartY = 0;
+        let touchendY = 0;
+        const thresholdX = 50;
+        const thresholdY = 150;
+
+        // Touch events
+        const checkDirection = () => {
+            if (Math.abs(touchstartY - touchendY) > thresholdY) return;
+            if (touchendX < touchstartX - thresholdX) {
+                carousel.next();
+            }
+            if (touchendX > touchstartX + thresholdX) {
+                carousel.prev();
+            }
+        };
+
+        $('#controls-carousel')[0].addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+            touchstartY = e.changedTouches[0].screenY;
+        });
+
+        $('#controls-carousel')[0].addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            touchendY = e.changedTouches[0].screenY;
+            checkDirection();
+        });
+    });
+</script>
+<%- include('partials/footer') %>

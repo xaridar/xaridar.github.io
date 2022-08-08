@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+
+.btn {
+    @apply text-lg rounded-full text-textPrimary bg-accent dark:text-textPrimaryDark
+         dark:bg-accentDark px-6 py-2 flex items-center relative transition origin-center
+           hover:scale-110 hover:brightness-90;
+}
+.moon-logo {
+    @apply opacity-100 translate-y-0 rotate-0;
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+.sun-logo {
+    @apply block opacity-0 translate-y-1/5 rotate-100;
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+.animate-moon {
+    @apply opacity-0 translate-y-1/5 rotate-50;
+}
+.animate-sun {
+    @apply opacity-100 translate-y-0 rotate-0;
+}
+#contact.opacity-0 {
+    @apply scale-50;
+    transition: opacity 100ms ease-out, transform 100ms ease-out !important;
+}
+#contact:not(.opacity-0) {
+    @apply scale-100;
+    transition: opacity 75ms ease-in, transform 75ms ease-in !important;
+}
+.mobile #nav > ul:not(.show) {
+    @apply -translate-x-full;
+}
+[data-splitting]:not(.splitting) {
+    @apply opacity-0;
+}
+.splitting .char {
+    animation: slide-in 1s cubic-bezier(0.5, 0, 0.5, 1) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+.hasSpans span {
+    @apply text-textPrimary dark:text-textPrimaryDark font-semibold transition-colors;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-1em) rotate(-0.5turn) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@tailwind utilities;

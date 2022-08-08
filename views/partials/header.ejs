@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="css/hamburgers.css" rel="stylesheet">
+    <title>Elliot Topper<%= header ? ' | ' + header.split(' ').map(word => [...Array(word.length).keys()].map((i) => i === 0 ? word.charAt(i).toUpperCase() : word.charAt(i)).join('')).join(' ') : '' %>
+    </title>
+</head>
+
+<body class="dark">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/flowbite.js" defer></script>
+    <div id="main" class="flex flex-col w-screen h-screen dark:bg-backgroundDark bg-background transition-colors">
+        <nav id="nav" class="flex-0 flex mobile:block dark:bg-headerDark bg-header w-screen transition-colors items-center overflow-hidden justify-between">
+            <button class="hamburger hamburger--collapse hidden mobile:block m-4" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner bg-primary dark:bg-primaryDark transition"></span>
+                </span>
+            </button>
+            <ul class="z-50 mobile:flex-col mobile:items-stretch mobile:gap-0 text-secondary dark:text-secondaryDark flex mobile:p-4 mobile:notDark:bg-header mobile:dark:bg-headerDark mobile:absolute mobile:rounded-br-3xl gap-4 items-center justify-start px-8 py-2 float-left">
+                <a href="/" class="align-middle my-1 <%= !header ? 'text-primary dark:text-primaryDark' : '' %>">
+                    <li class="transition-color p-2 mobile:py-4 mobile:px-2 hover:brightness-60 transition">
+                        <svg class="mobile:hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span class="hidden mobile:block">Home</span>
+                    </li>
+                </a>
+                <% for (const page of pages) { %>
+                <a href="/<%= page %> " class="align-middle my-1 <%= header === page ? 'text-primary dark:text-primaryDark' : '' %>">
+                    <li class="py-2 px-6 mobile:py-4 mobile:px-2 hover:brightness-60 transition transition-color">
+                        <%= page.split('_').map(word => [...Array(word.length).keys()].map((i) => i === 0 ? word.charAt(i).toUpperCase() : word.charAt(i)).join('')).join(' ') %>
+                    </li>
+                </a>
+                <% } %>
+            </ul>
+            <label for="darkToggle" class="h-fit dark-fab:hidden inline-flex items-center cursor-pointer relative mr-4">
+                <input type="checkbox" role="switch" id="darkToggle" class="sr-only peer">
+                <div class="w-11 h-6 bg-accent peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-background dark:after:bg-backgroundDark after:border-background dark:after:border-backgroundDark after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accentDark peer-focus:after:ring-8 peer-focus:after:ring-accent dark:peer-focus:after:ring-accentDark peer-focus:after:ring-opacity-40 dark:peer-focus:after:ring-opacity-40">
+                </div>
+                <span class="transition-colors ml-3 select-none text-sm font-medium text-textSecondary dark:text-textSecondaryDark">Dark Mode</span>
+            </label>
+        </nav>
+        <main class="flex-1 overflow-x-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-primary dark:scrollbar-thumb-primaryDark">

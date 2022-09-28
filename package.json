@@ -9,7 +9,7 @@
         "dev": "concurrently \"nodemon .\" \"npm run watch\"",
         "start": "npm run build && node .",
         "deploy": "npm run build && node deploy.js",
-        "pages": "npm run deploy && git subtree push --prefix dist origin gh-pages --force"
+        "pages": "npm run deploy && git subtree split --prefix dist -b gh-pages && git push --force origin gh-pages:gh-pages && git branch -D gh-pages"
     },
     "author": "Elliot Topper",
     "license": "ISC",

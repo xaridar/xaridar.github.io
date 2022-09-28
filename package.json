@@ -9,7 +9,7 @@
         "dev": "concurrently \"nodemon .\" \"npm run watch\"",
         "start": "npm run build && node .",
         "deploy": "npm run build && node deploy.js",
-        "pages": "npm run deploy && git checkout -b gh-pages && git add . && git commit -m \"deploy\" && git subtree split --prefix dist -b temp-gh-pages && git push --force origin temp-gh-pages:gh-pages && git branch -D temp-gh-pages && git checkout main && git branch -D gh-pages"
+        "pages": "npm run deploy && git config user.email \"xaridara@gmail.com\" && git config user.name \"Elliot Topper\" && git checkout -b gh-pages && git add . && git commit -m \"deploy\" && git subtree split --prefix dist -b temp-gh-pages && git push --force origin temp-gh-pages:gh-pages && git branch -D temp-gh-pages && git checkout main && git branch -D gh-pages"
     },
     "author": "Elliot Topper",
     "license": "ISC",

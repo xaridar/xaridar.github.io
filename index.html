@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="/css/hamburgers.css" rel="stylesheet">
+    <title>Elliot Topper
+    </title>
+</head>
+
+<body class="dark">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/script.js" defer></script>
+    <script src="/js/flowbite.js" defer></script>
+    <div id="main" class="flex flex-col w-screen h-screen dark:bg-backgroundDark bg-background transition-colors">
+        <nav id="nav" class="flex-0 flex mobile:block dark:bg-headerDark bg-header w-screen transition-colors items-center overflow-hidden justify-between">
+            <button class="hamburger hamburger--collapse hidden mobile:block m-4" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner bg-primary dark:bg-primaryDark transition"></span>
+                </span>
+            </button>
+            <ul class="z-50 mobile:flex-col mobile:items-stretch mobile:gap-0 text-secondary dark:text-secondaryDark flex mobile:p-4 mobile:notDark:bg-header mobile:dark:bg-headerDark mobile:absolute mobile:rounded-br-3xl gap-4 items-center justify-start px-8 py-2 float-left">
+                <a href="/" class="align-middle my-1 text-primary dark:text-primaryDark">
+                    <li class="transition-color p-2 mobile:py-4 mobile:px-2 hover:brightness-60 transition">
+                        <svg class="mobile:hidden h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span class="hidden mobile:block">Home</span>
+                    </li>
+                </a>
+                
+                <a href="/about " class="align-middle my-1 ">
+                    <li class="py-2 px-6 mobile:py-4 mobile:px-2 hover:brightness-60 transition transition-color">
+                        About
+                    </li>
+                </a>
+                
+                <a href="/projects " class="align-middle my-1 ">
+                    <li class="py-2 px-6 mobile:py-4 mobile:px-2 hover:brightness-60 transition transition-color">
+                        Projects
+                    </li>
+                </a>
+                
+                <a href="/resume " class="align-middle my-1 ">
+                    <li class="py-2 px-6 mobile:py-4 mobile:px-2 hover:brightness-60 transition transition-color">
+                        Resume
+                    </li>
+                </a>
+                
+            </ul>
+            <label for="darkToggle" class="h-fit dark-fab:hidden inline-flex items-center cursor-pointer relative mr-4">
+                <input type="checkbox" role="switch" id="darkToggle" class="sr-only peer">
+                <div class="w-11 h-6 bg-accent peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-background dark:after:bg-backgroundDark after:border-background dark:after:border-backgroundDark after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-accentDark peer-focus:after:ring-8 peer-focus:after:ring-accent dark:peer-focus:after:ring-accentDark peer-focus:after:ring-opacity-40 dark:peer-focus:after:ring-opacity-40">
+                </div>
+                <span class="transition-colors ml-3 select-none text-sm font-medium text-textSecondary dark:text-textSecondaryDark">Dark Mode</span>
+            </label>
+        </nav>
+        <main class="flex-1 overflow-x-hidden scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-primary dark:scrollbar-thumb-primaryDark">
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+<div class="flex items-center justify-center w-full h-full flex-col gap-2 text-center max-w-3/4 m-auto">
+    <h1 class="text-6xl text-textPrimary dark:text-textPrimaryDark transition-colors" data-splitting>Elliot Topper</h1>
+    <h3 class="text-3xl text-textPrimary dark:text-textPrimaryDark transition-colors">Computer Science Major at The College of New Jersey</h3>
+    <br>
+    <a href='/projects' class="btn transition-color">
+        Explore Projects
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
+    </a>
+</div>
+<script>
+    $(document).ready(() => {
+        Splitting();
+    });
+</script>
+        </main>
+        <nav id="footer" class="dark:bg-headerDark bg-header w-screen transition-colors py-4">
+            <div class="hidden xs:block relative w-max ml-8 bg-inherit">
+                <button id="contactToggle" type="button" class="w-max flex justify-center rounded-md px-4 py-2 text-sm font-medium dark:text-textSecondaryDark text-textSecondary bg-accent dark:bg-accentDark bg-opacity-0 dark:bg-opacity-80 hover:bg-opacity-80 dark:hover:bg-opacity-40 transition transition-color" aria-expanded="true" aria-haspopup="true">
+                    My Links
+                    <svg class="-mr-1 ml-2 h-5 w-5 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <div id="contact" class="z-50 opacity-0 select-none pointer-events-none absolute -translate-x-1/2 left-1/2 bottom-full mt-2 w-max rounded-md bg-primaryDark" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div class="py-1" role="none">
+                        <a href="https://www.github.com/xaridar" target="_blank" role="menuitem" tabindex="-1" class="pr-20 hover:bg-header hover:text-backgroundDark text-headerDark block px-4 py-2 text-sm">GitHub</a>
+                        <a href="https://www.linkedin.com/in/elliot-topper" target="_blank" role="menuitem" tabindex="-1" class="pr-20 hover:bg-header hover:text-backgroundDark text-headerDark block px-4 py-2 text-sm">LinkedIn</a>
+                        <a href="mailto:xaridara@gmail.com" target="_blank" role="menuitem" tabindex="-1" class="pr-20 hover:bg-header hover:text-backgroundDark text-headerDark block px-4 py-2 text-sm">Email</a>
+                        <a href="tel:8482205442" target="_blank" role="menuitem" tabindex="-1" class="pr-20 hover:bg-header hover:text-backgroundDark text-headerDark block px-4 py-2 text-sm">Phone</a>
+                    </div>
+                </div>
+            </div>
+            <ul class="xs:hidden text-secondary dark:text-secondaryDark flex gap-12 items-center mx-8 justify-start sm:mx-0 sm:justify-center px-8">
+                <li><a href="https://www.github.com/xaridar" target="_blank">
+                        <svg viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 transition-color transition hover:brightness-75">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="currentColor" />
+                        </svg>
+
+                    </a></li>
+                <li><a href="https://www.linkedin.com/in/elliot-topper" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 transition-color transition hover:brightness-75">
+                            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                        </svg>
+                    </a></li>
+                <li><a href="mailto:xaridara@gmail.com" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="transition-color transition h-8 w-8 dark:stroke-headerDark stroke-header hover:brightness-75" fill="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </a></li>
+                <li><a href="tel:8482205442" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="transition-color transition h-8 w-8 dark:stroke-headerDark stroke-header hover:brightness-75" fill="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </a></li>
+            </ul>
+        </nav>
+        <label for="darkToggle" class="bg-secondary dark:bg-secondaryDark hover:brightness-75 transition-color transition text-textPrimary dark:text-textPrimaryDark hidden right-8 bottom-8 dark-fab:inline-flex items-center cursor-pointer absolute rounded-full">
+            <input tabindex="-1" type="checkbox" id="darkToggle" class="sr-only peer">
+            <button class="p-0 w-16 h-16 rounded-full active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-2 pointer-events-none select-none">
+                <div class="m-auto relative h-fit w-fit">
+                    <span class="sun-logo align-middle h-fit w-fit">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-textPrimary transition-colors" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                    <span class="moon-logo align-middle h-fit w-fit inset-0 absolute">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-textPrimaryDark transition-colors" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                    </span>
+                </div>
+            </button>
+        </label>
+        </div>
+        </body>
+
+        </html>

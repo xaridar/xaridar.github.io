@@ -2,15 +2,26 @@
 <% 
     const projects = [
         {
+            name: 'ImageProc',
+            description: `ImageProc is an image processing pipeline toolbox built for the parallel processing of large numbers of images. It allows a user to provide a single command to specify image input and output, and applies the desired operations.
+            
+            ImageProc was developed in Java to both increase my understanding of image processing and to be utilized for the ease of image processing tasks in large batches.
+            The toolbox is entirely modular, allowing for ease of operation creation. Operation order and nesting can be developed into a complex tree structure using pipeline functions and parallel processing.
+            
+            The syntax of ImageProc's input was developed using similar concepts to program language interpreters, including tokenizers, parsers, and abstract syntax trees.`,
+            skills: ['Java', 'Image Processing', 'Parallel Processing'],
+            image: '/images/IP_GH.jpg',
+            imageAlt: 'Screenshot of the ImageProc GitHub repository.',
+            repository: 'https://github.com/xaridar/image-proc'
+        },
+        {
             name: 'VisualSickness',
             description: `VisualSickness is a web application developed by me and my research group at The College of New Jersey.
             
             It provides a place for researchers of cybersickness to collect, group, and share their studies using various information structures that mimic real-life concepts.
             The application provides a way for researchers to administer and collect data in the form of Simulator Sickness Questionnaires, a common cybersickness survey.
-            
             I was heavily involved in the development of the application, which is written in PHP and MySQL, using Bootstrap and jQuery.
-            
-            VisualSickness is the topic of a workshop paper, which has been accepted to be presented at the IEEE VR 2023 conference.`,
+            VisualSickness is the topic of a workshop paper, which has been presented at the IEEE VR 2023 conference. The paper can be found at: <a href="https://ieeexplore.ieee.org/document/10108585" class="text-blue-500" target="_blank">IEEE Explore</a>`,
             skills: ['PHP', 'HTML', 'Bootstrap', 'jQuery', 'MySQL'],
             image: 'https://user-images.githubusercontent.com/98768343/191880347-a0406273-de23-4614-ba19-c1d1210c8f6b.png',
             imageAlt: 'Screenshot of the homepage of visualsickness.tcnj.edu.',
